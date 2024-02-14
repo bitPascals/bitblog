@@ -28,7 +28,7 @@ Bootstrap5(app)
 login_manager = LoginManager()
 login_manager.init_app(app)
 
-app.config['SECRET_KEY'] = 'pascal'
+app.config['SECRET_KEY'] = os.environ.get("FLASK_BLOG_KEY")
 
 # CONNECT TO DB
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get("DB_URI", "sqlite:///posts.db")
